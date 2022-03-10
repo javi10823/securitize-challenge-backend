@@ -1,15 +1,13 @@
 import { HttpModule } from '@nestjs/axios';
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { WalletsController } from './wallets/wallet.controller';
-import { WalletsService } from './wallets/services/wallet.service';
-import { EtherscanService } from './etherscan/etherscan.service';
+import { WalletsController } from './controllers/wallets/wallet.controller';
+import { WalletsService } from './controllers/wallets/services/wallet.service';
+import { EtherscanService } from './controllers/etherscan/etherscan.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [ConfigModule.forRoot(), HttpModule],
-  controllers: [AppController, WalletsController],
-  providers: [AppService, WalletsService, EtherscanService],
+  controllers: [WalletsController],
+  providers: [WalletsService, EtherscanService],
 })
 export class AppModule {}

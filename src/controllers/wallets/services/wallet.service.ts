@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import { EtherscanService } from 'src/etherscan/etherscan.service';
-import { IWallet } from '../../interfaces/wallet.interface';
+import { EtherscanService } from 'src/controllers/etherscan/etherscan.service';
+import { IWallet } from '../../../interfaces/wallet.interface';
 
 @Injectable()
 export class WalletsService {

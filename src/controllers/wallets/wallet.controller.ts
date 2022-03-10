@@ -7,10 +7,10 @@ import {
   Post,
   Put,
 } from '@nestjs/common';
-import { AddWalletDto } from 'src/wallets/dto/addWallet.dto';
-import { DeleteWalletDto } from 'src/wallets/dto/deleteWallet.dto';
-import { GetWalletDto } from 'src/wallets/dto/getWallet.dto';
-import { UpdateWalletDto } from 'src/wallets/dto/updateWallet.dto';
+import { AddWalletDto } from 'src/controllers/wallets/dto/addWallet.dto';
+import { DeleteWalletDto } from 'src/controllers/wallets/dto/deleteWallet.dto';
+import { GetWalletDto } from 'src/controllers/wallets/dto/getWallet.dto';
+import { UpdateWalletDto } from 'src/controllers/wallets/dto/updateWallet.dto';
 import { WalletsService } from './services/wallet.service';
 
 @Controller('wallets')

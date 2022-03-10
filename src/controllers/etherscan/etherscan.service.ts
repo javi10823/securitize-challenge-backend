@@ -7,7 +7,7 @@ import {
   IEtherscanMultiResult,
   IEtherscanResult,
   IEtherscanTransaction,
-} from '../interfaces/etherscan.interface';
+} from '../../interfaces/etherscan.interface';
 
 @Injectable()
 export class EtherscanService {
