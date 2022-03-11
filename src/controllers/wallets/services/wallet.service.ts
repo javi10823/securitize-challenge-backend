@@ -101,4 +101,10 @@ export class WalletsService {
     this.wallets.splice(arrIndex, 1);
     return { message: 'Deleted succesfully' };
   }
+
+  setFavorite(id: number, favorite: boolean) {
+    const arrIndex = this.wallets.findIndex((wallet) => wallet.id === id);
+    this.wallets[arrIndex].isFavorite = favorite;
+    return this.wallets[arrIndex];
+  }
 }

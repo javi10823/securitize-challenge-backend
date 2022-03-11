@@ -3,4 +3,5 @@ export interface IWallet {
   address: string;
   balance: number;
   isOld: boolean;
+  isFavorite: boolean;
 }

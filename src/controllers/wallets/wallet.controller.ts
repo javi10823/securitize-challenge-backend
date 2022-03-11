@@ -11,6 +11,7 @@ import { AddWalletDto } from 'src/controllers/wallets/dto/addWallet.dto';
 import { DeleteWalletDto } from 'src/controllers/wallets/dto/deleteWallet.dto';
 import { GetWalletDto } from 'src/controllers/wallets/dto/getWallet.dto';
 import { UpdateWalletDto } from 'src/controllers/wallets/dto/updateWallet.dto';
+import { SetFavoriteDto } from './dto/setFavorite.dto';
 import { WalletsService } from './services/wallet.service';
 
 @Controller('wallets')
@@ -24,6 +25,7 @@ export class WalletsController {
       address: addWalletDto.address,
       balance: -1,
       isOld: false,
+      isFavorite: false,
     });
   }
 
@@ -44,6 +46,14 @@ export class WalletsController {
     return this.walletsService.update(
       updateWalletDto.id,
       updateWalletDto.address,
+    );
+  }
+
+  @Put('favorite')
+  setFavorite(@Body() setFavoriteDto: SetFavoriteDto) {
+    return this.walletsService.setFavorite(
+      setFavoriteDto.id,
+      setFavoriteDto.favorite,
     );
   }
 
