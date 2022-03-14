@@ -5,7 +5,7 @@
 2. Create the `.env` file with the following content:
 ```SHELL
 ETHERSCAN_URL=https://api.etherscan.io/api
-ETHERSCAN_APIKEY=NSZCD6S4TKVWRS13PMQFMVTNP6H7NAGHUY
+ETHERSCAN_APIKEY=YourApiKey
 PORT=3000
 ```
 3. Run the project with the command `npm run start`
