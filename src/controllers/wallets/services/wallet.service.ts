@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { EtherscanService } from 'src/controllers/etherscan/etherscan.service';
 import { IWallet } from '../../../interfaces/wallet.interface';
 
@@ -9,6 +9,15 @@ export class WalletsService {
   constructor(private readonly etherscanService: EtherscanService) {}
 
   async create(wallet: IWallet) {
+    // Throw error if wallet already exists
+    if (
+      this.wallets.findIndex(
+        (arrWallet) => arrWallet.address === wallet.address,
+      ) >= 0
+    ) {
+      throw new HttpException({ message: 'It has already been added' }, 400);
+    }
+
     // Address wallet data
     const etherscanWallet = await this.etherscanService.findOne(wallet);
 
